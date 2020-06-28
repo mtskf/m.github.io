@@ -1,0 +1,15 @@
+html, body {
+  scroll-snap-type: y mandatory;
+  /* scroll-snap-type: mandatory;
+	scroll-snap-points-y: repeat(3rem);
+	scroll-snap-type: y mandatory; */
+}
+
+
+
+.scroll-snap {
+  scroll-snap-align: start;
+  height: 100vh;
+  /* scroll-margin: 8px; */
+  /* scroll-snap-margin: 8px; works in Safari */
+}
