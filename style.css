@@ -10,7 +10,7 @@ html, body {
   height: 100vh;
   padding: 0;
   box-sizing: border-box;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .scroll-snap > img {
