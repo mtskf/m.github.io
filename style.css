@@ -19,7 +19,7 @@ html, body {
 
 #loading {
   position: relative;
-  animation: rempage 0.4s ease-out 10s forwards;
+  animation: rempage 0.4s ease-out 15s forwards;
 }
 #loading > img {
   position: absolute;
