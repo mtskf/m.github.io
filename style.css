@@ -7,10 +7,10 @@ html, body {
 .scroll-snap {
   scroll-snap-align: start;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .scroll-snap > img {
