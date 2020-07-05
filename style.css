@@ -1,18 +1,59 @@
 html, body {
   scroll-snap-type: y mandatory;
-  /* scroll-snap-type: mandatory;
-	scroll-snap-points-y: repeat(3rem);
-  scroll-snap-type: y mandatory; */
   margin: 0;
   padding: 0;
 }
 
-
-
 .scroll-snap {
   scroll-snap-align: start;
-  height: 100vh;
-  padding: 16px;
-  /* scroll-margin: 8px; */
-  /* scroll-snap-margin: 8px; works in Safari */
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.scroll-snap > img {
+  width: 100%;
+}
+
+#loading {
+  position: relative;
+  animation: rempage 0.4s ease-out 10s forwards;
+}
+#loading > img {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  opacity: 0;
+}
+#loading > img:first-child {
+  opacity: 1;
+}
+#loading > img:nth-child(2) {
+  animation: show 0.4s ease-out 2s forwards;
+}
+
+#loading > img:nth-child(3) {
+  animation: show 0.4s ease-out 4s forwards;
+}
+
+#loading > img:nth-child(4) {
+  animation: show 0.4s ease-out 6s forwards;
+}
+
+
+@keyframes show {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes rempage {
+  0% {
+    display: block;
+    min-height: 100vh;
+  }
+  100% {
+    display: none;
+    min-height: 0;
+  }
 }
