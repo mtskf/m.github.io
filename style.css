@@ -1,52 +1,113 @@
 html, body {
-  scroll-snap-type: y mandatory;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
   margin: 0;
   padding: 0;
 }
 
-.scroll-snap {
-  scroll-snap-align: start;
+.section {
+  position: relative;
   width: 100%;
   min-height: 100vh;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
-.scroll-snap > img {
+.scroll-snap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  width: 0;
+  height: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+.scroll-snap-overflow, .scroll-snap-vh {
+  content: "";
+  scroll-snap-align: start;
+  overflow: hidden;
+}
+.scroll-snap-overflow {
+  -webkit-box-flex: 1;
+          flex-grow: 1;
+}
+.scroll-snap-vh {
+  flex-shrink: 0;
+  height: 100vh;
+}
+
+.section-contents > img {
+  display: block;
   width: 100%;
+  margin: 0;
 }
 
 #loading {
   position: relative;
-  /* animation: rempage 0.4s ease-out 15s forwards; */
+  /* animation: rempage 0s ease-out 15s forwards; */
 }
+
 #loading > img {
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   opacity: 0;
 }
+
 #loading > img:first-child {
   opacity: 1;
 }
+
 #loading > img:nth-child(2) {
-  animation: show 0.4s ease-out 2s forwards;
+  -webkit-animation: show 0.4s ease-out 2s forwards;
+          animation: show 0.4s ease-out 2s forwards;
 }
 
 #loading > img:nth-child(3) {
-  animation: show 0.4s ease-out 4s forwards;
+  -webkit-animation: show 0.4s ease-out 4s forwards;
+          animation: show 0.4s ease-out 4s forwards;
 }
 
 #loading > img:nth-child(4) {
-  animation: show 0.4s ease-out 6s forwards;
+  -webkit-animation: show 0.4s ease-out 6s forwards;
+          animation: show 0.4s ease-out 6s forwards;
 }
 
+@-webkit-keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 @keyframes show {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-
+@-webkit-keyframes rempage {
+  0% {
+    display: block;
+    min-height: 100vh;
+  }
+  100% {
+    display: none;
+    min-height: 0;
+  }
+}
 @keyframes rempage {
   0% {
     display: block;
